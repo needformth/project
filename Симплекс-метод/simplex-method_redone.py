@@ -215,6 +215,7 @@ def find_the_coordinates(tetas: list[list[int]], estimates: list[int]) -> tuple[
         return max(res, key=lambda x: x[0])[1]
     else:
         return min(res, key=lambda x: x[0])[1]
+        
 # Вывод параметров-тета и комментариев по поводу опорного элемента
 def print_tetas(tetas: list[list[int]], estimates: list[int]) -> NoReturn:
     '''Функция выводит параметры тета и координаты опорного элемента'''
@@ -222,6 +223,8 @@ def print_tetas(tetas: list[list[int]], estimates: list[int]) -> NoReturn:
     string_tetas = [[str(x) for x in el] for el in tetas]
     string_res = 'Тета: ', {f'θ{i + 1}': t for t, i in zip(string_tetas, inds_of_problems)}
     print(*string_res)
+
+# Функция вывода координат
 def print_coordinates(support_el_coords: tuple[int]) -> NoReturn:
     row, col = (1 + el for el in support_el_coords)
     print(f'Опорным является элемент по координатам: строка = {row}, столбец = {col}')
